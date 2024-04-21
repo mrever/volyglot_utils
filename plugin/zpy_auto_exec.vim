@@ -29,14 +29,20 @@ def ls(*args):
 def mshow(*args, **kwargs):
     h = figure()
     imshow(*args, **kwargs)
-    show(block=False)
+    if '__nvim__' not in globals() or __nvim__ == False:
+        show(block=False)
+    else:
+        show()
     return h
 
 def mplot(*args, **kwargs):
     h = figure()
     plot(*args, **kwargs)
     grid()
-    show(block=False)
+    if '__nvim__' not in globals() or __nvim__ == False:
+        show(block=False)
+    else:
+        show()
     return h
 
 def pdump(fname, dat):
