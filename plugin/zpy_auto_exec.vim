@@ -81,6 +81,17 @@ def loadenvvariables():
         if envvar:
             globals()[envvar] = os.environ[envvar]
 
+def runfile(filename):
+    with open(filename) as f:
+        exec(f.read())
+    temp = locals()
+    for k in temp.keys():
+        globals()[k] = temp[k]
+
+def runfbackg(filename):
+    t = threading.Thread(target=runfile, args=(filename,))
+    t.start()
+
 
 import bokeh.plotting as bplotting
 import bokeh.models.tools as btools
