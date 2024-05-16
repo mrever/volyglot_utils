@@ -1,6 +1,6 @@
 command! Vythonutil normal :call Vythonutil()<cr>
 
-nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Vythonload()<cr>:call Vythonutil()<cr><c-w><c-h>
+"nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Vythonload()<cr>:call Vythonutil()<cr><c-w><c-h>
 
 func! Vythonutil()
 

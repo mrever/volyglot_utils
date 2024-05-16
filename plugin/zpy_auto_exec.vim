@@ -1,3 +1,9 @@
+command! Vythonautos normal :call Vythonautos()<cr>
+
+nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Vythonload()<cr>:call Vythonautos()<cr><c-w><c-h>
+
+func! Vythonautos()
+
 py3 << EOL
 import numpy as np
 import cv2
@@ -3784,3 +3790,5 @@ inoremap \:flatbread: 🫓
 inoremap \:tamale: 🫔
 inoremap \:fondue: 🫕
 inoremap \:teapot: 🫖
+
+endfunc "end Vythonautos
