@@ -1,6 +1,6 @@
 command! Vythonautos normal :call Vythonautos()<cr>
 
-nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Vythonload()<cr>:call Vythonautos()<cr><c-w><c-h>
+nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Vythonload()<cr>:call Vythonautos()<cr>:sp<cr>:e test.py<cr><c-w><c-h>:set filetype=python<cr>
 
 func! Vythonautos()
 
