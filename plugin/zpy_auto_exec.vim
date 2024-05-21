@@ -140,7 +140,7 @@ def bimshow(img_orig, scale=1, **figure_kwargs):
         img = cv.cvtColor(img, cv.COLOR_GRAY2RGBA)
     elif img.ndim == 3:  # rgb input
         img = cv.cvtColor(img, cv.COLOR_BGR2RGBA)
-    img = np.ascontiguousarray(np.flipud(img))
+    img = np.ascontiguousarray((img))
     img2 = img.view('uint32').reshape(img.shape[:2])
     p = bplotting.figure(
         x_range=(0, img.shape[1]),
@@ -154,7 +154,7 @@ def bimshow(img_orig, scale=1, **figure_kwargs):
             ("RGB", "(@R, @G, @B)")]))
     p.toolbar.logo = None #don't show Bokeh icon/link
     source = bplotting.ColumnDataSource(data=dict(
-        img=[img2], x=[0], y=[img.shape[0]],
+        img=[img2], x=[0], y=[0],
         dw=[img.shape[1]], dh=[img.shape[0]],
         R=[img[::-1, :, 0]], G=[img[::-1, :, 1]], B=[img[::-1, :, 2]]))
     p.image_rgba(source=source, image='img', x='x', y='y', dw='dw', dh='dh')
