@@ -53,6 +53,11 @@ def mplot(*args, **kwargs):
         show()
     return h
 
+def mread(fname):
+    with open(fname, 'r') as f:
+        dat = f.read().split('\n')
+    return dat
+
 def pdump(fname, dat):
     with open(fname, 'wb') as f:
         pickle.dump(dat, f)
