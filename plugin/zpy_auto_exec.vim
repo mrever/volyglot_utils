@@ -1,8 +1,8 @@
-command! Vythonautos normal :call Vythonautos()<cr>
+command! Volyglotautos normal :call Volyglotautos()<cr>
 
-nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Vythonload()<cr>:call Vythonautos()<cr>:sp<cr>:e test.py<cr><c-w><c-h>:set filetype=python<cr>
+nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Volyglotload()<cr>:call Volyglotautos()<cr>:sp<cr>:e test.py<cr><c-w><c-h>:set filetype=python<cr>
 
-func! Vythonautos()
+func! Volyglotautos()
 
 py3 << EOL
 import numpy as np
@@ -109,7 +109,7 @@ import bokeh.models.tools as btools
 def bplot(x=None, y=None, outfile=None, title='', xlab='', ylab='', legend=None,
          linew=2, pwidth=1280, pheight=720):
     if not outfile:
-        outfile = f"{vyth.hometmp}{np.random.randint(10000000)}.html"
+        outfile = f"{voly.hometmp}{np.random.randint(10000000)}.html"
     if not y:
         y = np.array(x).copy()
         x = np.arange(len(x))
@@ -122,23 +122,23 @@ def bplot(x=None, y=None, outfile=None, title='', xlab='', ylab='', legend=None,
     p.add_tools(btools.HoverTool())
     p.toolbar.logo = None #don't show Bokeh icon/link
     bplotting.save(p)
-    vyth.writebuffhtml(f'<object data="{outfile}" width="{pwidth}" height="{pheight}"></object>',
+    voly.writebuffhtml(f'<object data="{outfile}" width="{pwidth}" height="{pheight}"></object>',
                        br=3, shownum=True)
     
 def bimagesc(data, outfile=None, title='', xlab='', ylab='', pwidth=1280, pheight=720):
     if not outfile:
-        outfile = f"{vyth.hometmp}{np.random.randint(10000000)}.html"
+        outfile = f"{voly.hometmp}{np.random.randint(10000000)}.html"
     bplotting.output_file(outfile)
     p = bplotting.figure(title=title, x_axis_label=xlab, y_axis_label=ylab)
     p.image(image=[data], x=0, y=0, dw=data.shape[1], dh=data.shape[0], palette='Spectral11')
     p.add_tools(btools.HoverTool())
     p.toolbar.logo = None #don't show Bokeh icon/link
     bplotting.save(p)
-    vyth.writebuffhtml(f'<object data="{outfile}" width="{pwidth}" height="{pheight}"></object>',
+    voly.writebuffhtml(f'<object data="{outfile}" width="{pwidth}" height="{pheight}"></object>',
                        br=3, shownum=True)
 
 def bimshow(img_orig, scale=1, **figure_kwargs):
-    outfile = f"{vyth.hometmp}{np.random.randint(10000000)}.html"
+    outfile = f"{voly.hometmp}{np.random.randint(10000000)}.html"
     bplotting.output_file(outfile)
     img = img_orig.astype(np.uint8)
     if img.ndim == 2:  # gray input
@@ -164,7 +164,7 @@ def bimshow(img_orig, scale=1, **figure_kwargs):
         R=[img[::-1, :, 0]], G=[img[::-1, :, 1]], B=[img[::-1, :, 2]]))
     p.image_rgba(source=source, image='img', x='x', y='y', dw='dw', dh='dh')
     bplotting.save(p)  # open a browser
-    vyth.writebuffhtml(f'<object data="{outfile}" width="{img.shape[1]+100}" height="{img.shape[0]+100}"></object>',  br=3, shownum=True)
+    voly.writebuffhtml(f'<object data="{outfile}" width="{img.shape[1]+100}" height="{img.shape[0]+100}"></object>',  br=3, shownum=True)
 
 EOL
 
@@ -3796,4 +3796,4 @@ inoremap \:tamale: 🫔
 inoremap \:fondue: 🫕
 inoremap \:teapot: 🫖
 
-endfunc "end Vythonautos
+endfunc "end Volyglotautos

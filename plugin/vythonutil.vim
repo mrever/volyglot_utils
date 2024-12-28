@@ -1,8 +1,8 @@
-command! Vythonutil normal :call Vythonutil()<cr>
+command! Volyglotutil normal :call Volyglotutil()<cr>
 
-"nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Vythonload()<cr>:call Vythonutil()<cr><c-w><c-h>
+"nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Volyglotload()<cr>:call Volyglotutil()<cr><c-w><c-h>
 
-func! Vythonutil()
+func! Volyglotutil()
 
 nnoremap <silent> <c-enter> :py3 exec(fconv(vim.current.line))<cr>
 inoremap <silent> <c-enter> <esc>:py3 exec(fconv(vim.current.line))<cr>a
@@ -187,4 +187,4 @@ def bplot(x=None,y=None,outfile='lines.html',title='',xlab='',ylab='',legend=Non
     show(p)
 
 EOL
-endfunc "end Vythonutil
+endfunc "end Volyglotutil
