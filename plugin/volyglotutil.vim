@@ -1,7 +1,7 @@
 "This file is borderline obsolete; might be deleted eventually
 command! Volyglotutil normal :call Volyglotutil()<cr>
 
-"nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Volyglotload()<cr>:call Volyglotutil()<cr><c-w><c-h>
+"nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/volybuff.py<cr>:call Volyglotload()<cr>:call Volyglotutil()<cr><c-w><c-h>
 
 func! Volyglotutil()
 

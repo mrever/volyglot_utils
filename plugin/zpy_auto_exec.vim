@@ -1,6 +1,6 @@
 command! Volyglotautos normal :call Volyglotautos()<cr>
 
-nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/pythonbuff.py<cr>:call Volyglotload()<cr>:call Volyglotautos()<cr>:sp<cr>:e test.py<cr><c-w><c-h>:set filetype=python<cr>
+nnoremap <silent> <c-F10> :vsp<enter><c-w><c-l>:e ~/volybuff.py<cr>:call Volyglotload()<cr>:call Volyglotautos()<cr>:sp<cr>:e test.py<cr><c-w><c-h>:set filetype=python<cr>
 
 func! Volyglotautos()
 
