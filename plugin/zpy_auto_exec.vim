@@ -3874,7 +3874,7 @@ inoremap ,' ↩
 inoremap ,; ,
 inoremap ,( ⟨
 inoremap ,) ⟩
-inoremap ,  ‿
+inoremap ,,  ‿
 inoremap ,: ·
 inoremap ,w 𝕨
 inoremap ,W 𝕎
