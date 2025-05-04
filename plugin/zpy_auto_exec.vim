@@ -3805,83 +3805,168 @@ inoremap <leader>:tamale: 🫔
 inoremap <leader>:fondue: 🫕
 inoremap <leader>:teapot: 🫖
 
-inoremap <leader>= ×
-inoremap <leader>- ÷
-inoremap <leader>+ ⋆
-inoremap <leader>_ √
-inoremap <leader>b ⌊
-inoremap <leader>B ⌈
-inoremap <leader>t ∧
-inoremap <leader>v ∨
-inoremap <leader>~ ¬
-inoremap <leader>< ≤
-inoremap <leader>> ≥
-inoremap <leader>/ ≠
-inoremap <leader>m ≡
-inoremap <leader>M ≢
-inoremap <leader>{ ⊣
-inoremap <leader>} ⊢
-inoremap <leader>z ⥊
-inoremap <leader>, ∾
-inoremap <leader>. ≍
-inoremap <leader>Z ⋈
-inoremap <leader>r ↑
-inoremap <leader>c ↓
-inoremap <leader>d ↕
-inoremap <leader>H «
-inoremap <leader>L »
-inoremap <leader>q ⌽
-inoremap <leader>a ⍉
-inoremap <leader>T ⍋
-inoremap <leader>V ⍒
-inoremap <leader>i ⊏
-inoremap <leader>I ⊑
-inoremap <leader>o ⊐
-inoremap <leader>O ⊒
-inoremap <leader>e ∊
-inoremap <leader>E ⍷
-inoremap <leader>u ⊔
-inoremap <leader>" ˙
-inoremap <leader>` ˜
-inoremap <leader>j ∘
-inoremap <leader>k ○
-inoremap <leader>h ⊸
-inoremap <leader>l ⟜
-inoremap <leader>K ⌾
-inoremap <leader>% ⊘
-inoremap <leader>$ ◶
-inoremap <leader>^ ⎊
-inoremap <leader>! ⎉
-inoremap <leader>@ ⚇
-inoremap <leader># ⍟
-inoremap <leader><leader>0 •
-inoremap <leader><leader>1 ˘
-inoremap <leader><leader>2 ¨
-inoremap <leader><leader>3 ⁼
-inoremap <leader><leader>4 ⌜
-inoremap <leader><leader>5 ´
-inoremap <leader><leader>6 ˝
-inoremap <leader><leader>8 ∞
-inoremap <leader><leader>9 ¯
-inoremap <leader>[ ←
-inoremap <leader>? ⇐
-inoremap <leader>' ↩
-inoremap <leader>; ,
-inoremap <leader>( ⟨
-inoremap <leader>) ⟩
-inoremap <leader>  ‿
-inoremap <leader>: ·
-inoremap <leader>w 𝕨
-inoremap <leader>W 𝕎
-inoremap <leader>x 𝕩
-inoremap <leader>X 𝕏
-inoremap <leader>f 𝕗
-inoremap <leader>F 𝔽
-inoremap <leader>g 𝕘
-inoremap <leader>G 𝔾
-inoremap <leader>s 𝔾
-inoremap <leader>S 𝕊
-inoremap <leader>R 𝕣
-inoremap <leader>p π
 
 endfunc "end Volyglotautos
+
+command BQN normal :call BQNSymbols()<cr>
+func! BQNSymbols()
+inoremap ,= ×
+inoremap ,- ÷
+inoremap ,+ ⋆
+inoremap ,_ √
+inoremap ,b ⌊
+inoremap ,B ⌈
+inoremap ,t ∧
+inoremap ,v ∨
+inoremap ,~ ¬
+inoremap ,< ≤
+inoremap ,> ≥
+inoremap ,/ ≠
+inoremap ,m ≡
+inoremap ,M ≢
+inoremap ,{ ⊣
+inoremap ,} ⊢
+inoremap ,z ⥊
+inoremap ,, ∾
+inoremap ,. ≍
+inoremap ,Z ⋈
+inoremap ,r ↑
+inoremap ,c ↓
+inoremap ,d ↕
+inoremap ,H «
+inoremap ,L »
+inoremap ,q ⌽
+inoremap ,a ⍉
+inoremap ,T ⍋
+inoremap ,V ⍒
+inoremap ,i ⊏
+inoremap ,I ⊑
+inoremap ,o ⊐
+inoremap ,O ⊒
+inoremap ,e ∊
+inoremap ,E ⍷
+inoremap ,u ⊔
+inoremap ," ˙
+inoremap ,` ˜
+inoremap ,j ∘
+inoremap ,k ○
+inoremap ,h ⊸
+inoremap ,l ⟜
+inoremap ,K ⌾
+inoremap ,% ⊘
+inoremap ,$ ◶
+inoremap ,^ ⎊
+inoremap ,! ⎉
+inoremap ,@ ⚇
+inoremap ,# ⍟
+inoremap ,0 •
+inoremap ,1 ˘
+inoremap ,2 ¨
+inoremap ,3 ⁼
+inoremap ,4 ⌜
+inoremap ,5 ´
+inoremap ,6 ˝
+inoremap ,8 ∞
+inoremap ,9 ¯
+inoremap ,[ ←
+inoremap ,? ⇐
+inoremap ,' ↩
+inoremap ,; ,
+inoremap ,( ⟨
+inoremap ,) ⟩
+inoremap ,  ‿
+inoremap ,: ·
+inoremap ,w 𝕨
+inoremap ,W 𝕎
+inoremap ,x 𝕩
+inoremap ,X 𝕏
+inoremap ,f 𝕗
+inoremap ,F 𝔽
+inoremap ,g 𝕘
+inoremap ,G 𝔾
+inoremap ,s 𝔾
+inoremap ,S 𝕊
+inoremap ,R 𝕣
+inoremap ,p π
+endfunc "end BQNSymbols
+command BQNoff normal :call BQNSymbolsOff()<cr>
+func! BQNSymbolsOff()
+inoremap ,=
+inoremap ,-
+inoremap ,+
+inoremap ,_
+inoremap ,b
+inoremap ,B
+inoremap ,t
+inoremap ,v
+inoremap ,~
+inoremap ,<
+inoremap ,>
+inoremap ,/
+inoremap ,m
+inoremap ,M
+inoremap ,{
+inoremap ,}
+inoremap ,z
+inoremap ,,
+inoremap ,.
+inoremap ,Z
+inoremap ,r
+inoremap ,c
+inoremap ,d
+inoremap ,H
+inoremap ,L
+inoremap ,q
+inoremap ,a
+inoremap ,T
+inoremap ,V
+inoremap ,i
+inoremap ,I
+inoremap ,o
+inoremap ,O
+inoremap ,e
+inoremap ,E
+inoremap ,u
+inoremap ,"
+inoremap ,`
+inoremap ,j
+inoremap ,k
+inoremap ,h
+inoremap ,l
+inoremap ,K
+inoremap ,%
+inoremap ,$
+inoremap ,^
+inoremap ,!
+inoremap ,@
+inoremap ,#
+inoremap ,0
+inoremap ,1
+inoremap ,2
+inoremap ,3
+inoremap ,4
+inoremap ,5
+inoremap ,6
+inoremap ,8
+inoremap ,9
+inoremap ,[
+inoremap ,?
+inoremap ,'
+inoremap ,;
+inoremap ,(
+inoremap ,)
+inoremap , 
+inoremap ,:
+inoremap ,w
+inoremap ,W
+inoremap ,x
+inoremap ,X
+inoremap ,f
+inoremap ,F
+inoremap ,g
+inoremap ,G
+inoremap ,s
+inoremap ,S
+inoremap ,R
+inoremap ,p
+endfunc "end BQNSymbols
