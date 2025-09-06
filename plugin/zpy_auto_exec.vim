@@ -123,7 +123,7 @@ def bplot(x=None, y=None, outfile=None, title='', xlab='', ylab='', legend=None,
         y = np.array(x).copy()
         x = np.arange(len(x))
     bplotting.output_file(outfile)
-    p = bplotting.figure(title=title, x_axis_label=xlab, y_axis_label=ylab)
+    p = bplotting.figure(title=title, x_axis_label=xlab, y_axis_label=ylab, frame_width=pwidth, frame_height=pheight)
     if legend:
         p.line(x,y, legend=legend, line_width=linew)
     else:
@@ -146,7 +146,7 @@ def bimagesc(data, outfile=None, title='', xlab='', ylab='', pwidth=1280, pheigh
     voly.writebuffhtml(f'<object data="{outfile}" width="{pwidth}" height="{pheight}"></object>',
                        br=3, shownum=True)
 
-def bimshow(img_orig, scale=1, **figure_kwargs):
+def bimshow(img_orig, scale=1, pwidth=1280, pheight=720, **figure_kwargs):
     outfile = f"{voly.hometmp}{np.random.randint(10000000)}.html"
     bplotting.output_file(outfile)
     img = img_orig.astype(np.uint8)
@@ -159,8 +159,8 @@ def bimshow(img_orig, scale=1, **figure_kwargs):
     p = bplotting.figure(
         x_range=(0, img.shape[1]),
         y_range=(img.shape[0], 0),
-        frame_width=img.shape[1]*scale,
-        frame_height=img.shape[0]*scale,
+        frame_width=int(img.shape[1]*scale),
+        frame_height=int(img.shape[0]*scale),
         **figure_kwargs)
     p.add_tools(btools.HoverTool(
         tooltips=[
@@ -173,7 +173,10 @@ def bimshow(img_orig, scale=1, **figure_kwargs):
         R=[img[::-1, :, 0]], G=[img[::-1, :, 1]], B=[img[::-1, :, 2]]))
     p.image_rgba(source=source, image='img', x='x', y='y', dw='dw', dh='dh')
     bplotting.save(p)  # open a browser
-    voly.writebuffhtml(f'<object data="{outfile}" width="{img.shape[1]+100}" height="{img.shape[0]+100}"></object>',  br=3, shownum=True)
+    if pwidth == -1 or pheight == -1:
+        voly.writebuffhtml(f'<object data="{outfile}" width="{img.shape[1]+100}" height="{img.shape[0]+100}"></object>',  br=3, shownum=True)
+    else:
+        voly.writebuffhtml(f'<object data="{outfile}" width="{pwidth}" height="{pheight}"></object>',  br=3, shownum=True)
 
 EOL
 
